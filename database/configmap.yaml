@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: database
+  namespace: fintech-db
+data:
+  POSTGRES_DB: "fintech_db"  

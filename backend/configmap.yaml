@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: backend
+  namespace: fintech-app
+data:
+  DB_HOST: "database.fintech-db.svc.cluster.local"
+  DB_PORT: "5432"
+  DB_NAME: "fintech"
