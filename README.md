@@ -1,1 +1,1 @@
-# k8s-fintech-repository
+# k8s-fintech-manifest
