@@ -6,4 +6,4 @@ metadata:
 data:
   DB_HOST: "database.fintech-db.svc.cluster.local"
   DB_PORT: "5432"
-  DB_NAME: "fintech"
+  DB_NAME: "fintech_db"
