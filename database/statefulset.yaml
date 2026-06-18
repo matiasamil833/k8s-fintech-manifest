@@ -4,6 +4,7 @@ metadata:
   name: database
   namespace: fintech-db
 spec:
+  replicas: 1
   selector:
     matchLabels:
       app: database
