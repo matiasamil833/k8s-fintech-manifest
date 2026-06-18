@@ -15,18 +15,37 @@ spec:
         app: frontend
     spec:
       containers:
-      - name: frontend
-        image: matiasamil833/fintech-frontend:v2
-        ports:
-        - containerPort: 3000
-        imagePullPolicy: IfNotPresent
-        envFrom:
-        - configMapRef:
-            name: frontend
-        resources:
-          requests:
-            memory: "256Mi"
-            cpu: "250m"
-          limits:
-            memory: "512Mi"
-            cpu: "500m"
+        - name: frontend
+          image: matiasamil833/fintech-frontend:v2
+          ports:
+            - containerPort: 3000
+          imagePullPolicy: IfNotPresent
+          envFrom:
+            - configMapRef:
+                name: frontend
+          resources:
+            requests:
+              memory: "256Mi"
+              cpu: "250m"
+            limits:
+              memory: "512Mi"
+              cpu: "500m"
+            securityContext:
+              runAsUser: 1001
+              runAsGroup: 1001
+              runAsNonRoot: true
+              allowPrivilegeEscalation: false
+              readOnlyRootFilesystem: true
+              capabilities:
+                drop:
+                  - ALL
+            volumeMounts:
+              - name: nginx-cache
+                mountPath: /var/cache/nginx
+              - name: nginx-run
+                mountPath: /run
+      volumes:
+        - name: nginx-cache
+          emptyDir: {}
+        - name: nginx-run
+          emptyDir: {}
