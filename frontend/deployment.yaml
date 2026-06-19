@@ -25,7 +25,7 @@ spec:
                 topologyKey: kubernetes.io/hostname
       containers:
         - name: frontend
-          image: matiasamil833/fintech-frontend:v2
+          image: matiasamil833/fintech-frontend:v4
           ports:
             - containerPort: 3000
           imagePullPolicy: IfNotPresent
