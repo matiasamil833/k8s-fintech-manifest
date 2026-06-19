@@ -4,4 +4,4 @@ metadata:
   name: frontend
   namespace: fintech-app
 data:
-  REACT_APP_API_URL: "" ## Rellenar con el valor de la ruta al servicio backend
+  REACT_APP_API_URL: "${EXTERNAL_IP}" ## Rellenar con el valor de la ruta al servicio backend
